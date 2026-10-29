@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merry Christmas, 9-Pyrite! 🎄</title>
+<style>
+:root {
+  --red: #a8323e;
+  --green: #244b38;
+  --cream: #fff8eb;
+  --gold: #d7b76d;
+  --ink: #3d3028;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+}
+.lights {
+  height: 17px;
+  background: repeating-linear-gradient(
+    90deg, #b42e3b 0 9px, transparent 9px 25px,
+    #e1c16b 25px 34px, transparent 34px 50px,
+    #315d43 50px 59px, transparent 59px 75px
+  );
+  box-shadow: 0 3px 12px #b8a47b;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 17px 12px;
+  background: var(--green);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font: 13px Arial, sans-serif;
+  padding: 8px 11px;
+  border: 1px solid #ffffff35;
+  border-radius: 20px;
+}
+nav a:hover { background: var(--red); }
+.hero {
+  text-align: center;
+  padding: 65px 18px 58px;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse at top, #54795a, transparent 70%),
+    var(--green);
+  position: relative;
+  overflow: hidden;
+}
+.eyebrow {
+  letter-spacing: 4px;
+  font: 11px Arial, sans-serif;
+  text-transform: uppercase;
+  color: #f1d99a;
+}
+h1 { font-size: clamp(35px, 7vw, 65px); margin: 20px 0 12px; }
+.hero p { line-height: 1.8; }
+.tree { font-size: 86px; margin: 10px; }
+.btn {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 13px 19px;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  font: 14px Arial, sans-serif;
+  margin: 5px;
+}
+.btn.gold { background: var(--gold); color: #352b20; }
+.btn.green { background: var(--green); }
+section {
+  max-width: 1000px;
+  padding: 55px 20px;
+  margin: auto;
+  text-align: center;
+  scroll-margin-top: 65px;
+}
+.kicker {
+  color: var(--red);
+  letter-spacing: 3px;
+  font: 11px Arial, sans-serif;
+  text-transform: uppercase;
+}
+h2 { color: var(--green); font-size: clamp(27px, 4vw, 38px); }
+.intro { max-width: 600px; margin: 0 auto 25px; line-height: 1.8; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 17px;
+  margin-top: 25px;
+}
+.card {
+  background: #fffdf7;
+  border: 1px solid #e9dcc6;
+  border-radius: 18px;
+  padding: 24px 17px;
+  box-shadow: 0 7px 22px #49351a0a;
+}
+.card .emoji { font-size: 43px; }
+.card h3 { color: var(--green); }
+.card p { line-height: 1.7; font-size: 14px; }
+.gift {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  background: #fffdf7;
+  color: var(--ink);
+  font: inherit;
+  border-radius: 18px;
+  padding: 25px 12px;
+  box-shadow: 0 5px 18px #49351a12;
+  transition: transform .2s;
+}
+.gift:hover { transform: translateY(-5px) rotate(-1deg); }
+.gift .emoji { display: block; font-size: 48px; margin-bottom: 12px; }
+.gift strong { color: var(--green); }
+.gift small { display: block; margin-top: 8px; }
+.soft { background: #f4ead8; }
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0;
+}
+.timebox {
+  min-width: 75px;
+  padding: 15px 10px;
+  background: var(--green);
+  color: white;
+  border-radius: 13px;
+}
+.timebox strong { display: block; font-size: 27px; }
+.timebox span { font: 11px Arial, sans-serif; }
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: white;
+  background: var(--green);
+  line-height: 1.8;
+}
+.snow {
+  position: fixed;
+  top: -15px;
+  z-index: 20;
+  pointer-events: none;
+  color: white;
+  text-shadow: 0 0 5px #789;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+.note {
+  background: #f7eedf;
+  border-radius: 12px;
+  padding: 15px;
+  font: 13px/1.7 Arial, sans-serif;
+  margin: 20px auto;
+  max-width: 650px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+<div class="lights"></div>
+
+<nav aria-label="Main navigation">
+  <a href="#home">Home</a>
+  <a href="#wishlist">Wishlists</a>
+  <a href="#confessions">Confessions</a>
+  <a href="#hall">Hall of Fame</a>
+  <a href="#messages">Message Wall</a>
+  <a href="#countdown">Countdown</a>
+</nav>
+
+<header class="hero" id="home">
+  <div class="eyebrow">A little Christmas magic for our class</div>
+  <div class="tree">🎄</div>
+  <h1>Merry Christmas,<br>9-Pyrite!</h1>
+  <p>One class, a million memories,<br>and a suspicious amount of kalokohan. ♡</p>
+  <a class="btn gold" href="#wishlist">Open the presents 🎁</a>
+  <a class="btn" href="#confessions">May sasabihin ako... 👀</a>
+  <p style="font-size:12px;color:#e9d8b8">Made with ♡ for Section Main</p>
+</header>
+
+<section id="wishlist">
+  <div class="kicker">Dear Santa...</div>
+  <h2>🎁 The Wishlist Corner</h2>
+  <p class="intro">
+    Click a present to submit your wishlist!
+    Be honest. Hindi po kasama sa budget ang mansion. 😭
+  </p>
+  <div class="grid">
+    <button class="gift" onclick="openForm('wishlist')">
+      <span class="emoji">🎁</span>
+      <strong>My Christmas Wishlist</strong>
+      <small>What I want vs. what I deserve 💀</small>
+    </button>
+    <div class="card">
+      <div class="emoji">💸</div>
+      <h3>Budget Check</h3>
+      <p>Lagyan ng estimated price. Santa is generous, not a billionaire.</p>
+    </div>
+    <div class="card">
+      <div class="emoji">✨</div>
+      <h3>Wishlist Reminder</h3>
+      <p>Wishlist lang ito, ha! No pressure to buy or give expensive gifts.</p>
+    </div>
+  </div>
+  <p class="note">
+    Wishlist questions: preferred name, desired gifts, estimated prices,
+    product links, why you want each gift, and what you want versus what
+    you deserve.
+  </p>
+</section>
+
+<section id="confessions" class="soft">
+  <div class="kicker">Things left unsaid</div>
+  <h2>💌 Confessions & Unsaid Thoughts</h2>
+  <p class="intro">
+    Para sa mga “may sasabihin sana ako kaso...” moments.
+    Wholesome, funny, friendship, or kilig — ikaw bahala. 👀
+  </p>
+  <div class="grid">
+    <div class="card">
+      <div class="emoji">🤐</div>
+      <h3>Unsaid Thoughts</h3>
+      <p>What's something you never got to say to a classmate?</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🫶</div>
+      <h3>Appreciation</h3>
+      <p>Who made your school year better, and why?</p>
+    </div>
+    <div class="card">
+      <div class="emoji">😭</div>
+      <h3>Class Lore</h3>
+      <p>What's your funniest memory with 9-Pyrite?</p>
+    </div>
+    <div class="card">
+      <div class="emoji">💗</div>
+      <h3>Crush Confession</h3>
+      <p>Optional lang! No pressure to name anyone.</p>
+    </div>
+    <div class="card">
+      <div class="emoji">💭</div>
+      <h3>Hear Me Out</h3>
+      <p>What's one thing you wish our class understood about you?</p>
+    </div>
+  </div>
+  <button class="btn" onclick="openForm('confession')">
+    Submit a confession 💌
+  </button>
+  <p class="note">
+    Confessions are reviewed by the class admin before publication.
+    No bullying, private information, or posts meant to embarrass someone.
+  </p>
+</section>
+
+<section id="hall">
+  <div class="kicker">And the award goes to...</div>
+  <h2>🏆 9-Pyrite Hall of Fame</h2>
+  <p class="intro">
+    The unofficial awards ceremony nobody asked for. HAHAHAHA.
+    Celebrate classmates kindly — no voting results are published by this demo.
+  </p>
+  <div class="grid">
+    <div class="card"><div class="emoji">🏃</div><h3>Most Likely to Be Late</h3><p>May sariling time zone. 😭</p></div>
+    <div class="card"><div class="emoji">🎤</div><h3>Class Clown</h3><p>Attendance: present. Seriousness: absent.</p></div>
+    <div class="card"><div class="emoji">🫶</div><h3>Most Helpful Classmate</h3><p>May sagot, may notes, may malasakit.</p></div>
+    <div class="card"><div class="emoji">🗣️</div><h3>Most Iconic Line</h3><p>One sentence. Forever remembered.</p></div>
+  </div>
+</section>
+
+<section id="messages" class="soft">
+  <div class="kicker">A little note for you</div>
+  <h2>💌 Christmas Message Wall</h2>
+  <p class="intro">
+    Leave a thank-you, holiday greeting, or wholesome message for the class.
+    Small words can make someone's day. 🤍
+  </p>
+  <button class="btn green" onclick="openForm('confession')">
+    Leave a message ♡
+  </button>
+</section>
+
+<section id="countdown">
+  <div class="kicker">Until Christmas Day</div>
+  <h2>⏳ The Christmas Countdown</h2>
+  <div class="countdown" aria-live="polite">
+    <div class="timebox"><strong id="days">--</strong><span>DAYS</span></div>
+    <div class="timebox"><strong id="hours">--</strong><span>HOURS</span></div>
+    <div class="timebox"><strong id="minutes">--</strong><span>MINUTES</span></div>
+    <div class="timebox"><strong id="seconds">--</strong><span>SECONDS</span></div>
+  </div>
+  <p>December 25, 2026 · More memories, more laughter, more 9-Pyrite. 🎄</p>
+  <button class="btn" onclick="toggleSnow()">Toggle the snow ❄️</button>
+</section>
+
+<footer>
+  <div style="font-size:27px">🎄 ♡ 🎁 ♡ 🎄</div>
+  <strong>SECTION MAIN, 9-PYRITE</strong>
+  <div>Made with love, laughter, and a little Christmas chaos.</div>
+  <small>Please be kind. Keep private things private. ♡</small>
+</footer>
+
+<script>
+// Add your published Google Forms links here after creating them.
+const WISHLIST_FORM_URL = "";
+const CONFESSION_FORM_URL = "";
+
+function openForm(type) {
+  const url = type === "wishlist"
+    ? WISHLIST_FORM_URL : CONFESSION_FORM_URL;
+  if (url) {
+    window.open(url, "_blank", "noopener,noreferrer");
+  } else {
+    alert("Our Christmas forms are coming soon! 🎄 Ask the class admin for the form link.");
+  }
+}
+
+let snowEnabled = true;
+function makeSnow() {
+  if (!snowEnabled) return;
+  const flake = document.createElement("span");
+  flake.className = "snow";
+  flake.textContent = ["❄", "✦", "❅"][Math.floor(Math.random() * 3)];
+  flake.style.left = Math.random() * 100 + "vw";
+  flake.style.fontSize = (10 + Math.random() * 13) + "px";
+  const duration = 5 + Math.random() * 7;
+  flake.style.animationDuration = duration + "s";
+  document.body.appendChild(flake);
+  setTimeout(() => flake.remove(), duration * 1000);
+}
+const snowTimer = setInterval(makeSnow, 350);
+
+function toggleSnow() {
+  snowEnabled = !snowEnabled;
+  if (!snowEnabled) {
+    document.querySelectorAll(".snow").forEach(el => el.remove());
+  }
+}
+
+function updateCountdown() {
+  // Christmas Day, Philippines time (UTC+8)
+  const target = new Date("2026-12-25T00:00:00+08:00").getTime();
+  const remaining = Math.max(0, target - Date.now());
+  document.getElementById("days").textContent =
+    Math.floor(remaining / 86400000);
+  document.getElementById("hours").textContent =
+    Math.floor(remaining / 3600000) % 24;
+  document.getElementById("minutes").textContent =
+    Math.floor(remaining / 60000) % 60;
+  document.getElementById("seconds").textContent =
+    Math.floor(remaining / 1000) % 60;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
